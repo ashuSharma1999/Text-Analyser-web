@@ -19,16 +19,14 @@ def analyse(request):
         for char in djtext:
             if char not in punctuation:
                 analyse=analyse+char
-        param={'purpose':'Remove Punctuation','analyse_text':analyse}
+        param={'purpose':'Remove Puntuation','analyse_text':analyse}
         djtext=analyse
-        # return render(request,'analyse.html',param)
     if(fullcaps=='on'):
         analyse=""
         for char in djtext:
             analyse=analyse+char.upper()
         param={'purpose':'Change to upper case','analyse_text':analyse}
         djtext=analyse
-        # return render(request,'analyse.html',param)
     if(newlineremover=='on'):
         analyse=""
         for char in djtext:
@@ -52,6 +50,7 @@ def analyse(request):
     if(removepunc !='on' and extraspaceremover !='on' and newlineremover !='on'and charcount !='on'and fullcaps !='on'):
         param={'purpose':'Error ! please select any operation.....Try again !'}
         return render(request,'error.html')
+        
     return render(request,'analyse.html',param)
     
 def contact(request):
