@@ -52,7 +52,6 @@ def analyse(request):
     if(removepunc !='on' and extraspaceremover !='on' and newlineremover !='on'and charcount !='on'and fullcaps !='on'):
         param={'purpose':'Error ! please select any operation.....Try again !'}
         return render(request,'error.html')
-        # return HttpResponse('<br><h1>Error ! please select any operation.....<br>Try again !</h1>')
     return render(request,'analyse.html',param)
     
 def contact(request):
@@ -61,5 +60,3 @@ def about(request):
     return render(request,'about.html')
 def feature(request):
     return render(request,'feature.html')
-# def image(request):
-#     return render(request,'image.html')
